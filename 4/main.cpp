@@ -1,25 +1,18 @@
+#include <algorithm>
 #include <iostream>
+#include <string>
+
 using namespace std;
+
 int main()
 {
-    int n, num, digit, rev = 0;
+    int n;
     cout << "Enter a positive number\n";
     cin >> n;
-    n = num;
-    do
-    {
-        digit = num % 10;
-        rev = (rev * 10) + digit;
-        num = num / 10;
-    } while (num != 0);
-    cout << "The reverse of the number is: " << rev << endl;
-    if (n == rev)
-    {
-        cout << "The number is a palindrome";
-    }
-    else
-    {
-        cout << "The number is not a palindrome";
-    }
+    string numStr = to_string(n);
+    string revStr = to_string(n);
+    reverse(revStr.begin(), revStr.end());
+    cout << "The reverse of the number is: " << revStr << endl;
+    cout << (!numStr.compare(revStr) ? "The number is a palindrome" : "The number is not a palindrome");
     return 0;
 }
