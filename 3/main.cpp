@@ -7,7 +7,7 @@ int main()
     cin >> n;
     for (i = 0; i < n; i++)
     {
-        sum = sum + i * i;
+        sum += i * i;
     }
     cout << "Sum of squares: " << sum << endl;
     return 0;
